@@ -1,0 +1,45 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tugaskakau;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Informatika
+ */
+public class tugasAlgoritma_case2 {
+    public static void main(String[] args){
+    Scanner x = new Scanner (System.in);
+    int uang;//untuk pengecekan kriteria
+    int sum=0;//untuk menjumlahkan uang seluruhnya
+    int[] jumlah = new int [5];//menyompan uang yang sesuai kriteria 
+    for(int a=0; a<5;a++){
+        System.out.print("masukan jumlah uang: ");
+        uang = x.nextInt();
+        System.out.println("uang = "+uang);
+        
+        if(uang < 10000){
+            System.out.println("Mohon tukar uang anda di bank terdekat");
+            jumlah[a]=uang;//karena uang dibawah 10000 maka akan muncul pesan
+        }else if(uang > 15000){
+            System.out.println("tidak di terima");
+            jumlah[a]=0;//uang lebih dari 15000 tidak disimpan 
+        }else{
+            System.out.println("disimpan");
+            jumlah[a]=uang;
+        }
+        }
+    x.close();
+        System.out.println("Hasil Disimpan : ");
+          for(int a=0; a<jumlah.length;a++){
+              System.out.print(jumlah[a]+" ");
+              sum = jumlah[a]+sum;
+              
+          }
+          System.out.println("jumlah simpanan anda = "+sum);
+}
+}
